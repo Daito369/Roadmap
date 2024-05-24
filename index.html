@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習ロードマップ</title>
+    <!-- 外部CSSファイルをリンク -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()">ダークモード</button>
+<div class="header">2年間で希少型エンジニアになるための独学ロードマップ</div>
+
+<div class="tabs">
+    <button class="tab active" onclick="showTabContent(event, 'tab1')">0-3ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab2')">4-6ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab3')">7-9ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab4')">10-12ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab5')">1年1-6ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab6')">1年7-9ヶ月</button>
+    <button class="tab" onclick="showTabContent(event, 'tab7')">1年10-12ヶ月</button>
+</div>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progress-bar"><span></span></div>
+    <div class="progress-text" id="progress-text">0% Complete</div>
+</div>
+<div id="tab1" class="tab-content active">
+    <h2>0-3ヶ月: 基礎の確立</h2>
+    <div class="card">
+    <h3>Linuxの基本</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task1">
+            <label for="task1">基本コマンド: <code>ls, cd, cp, mv, rm, touch, mkdir, chmod, chown, ps, kill, grep, find, tar, zip, unzip</code>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: コマンドを実行してみる。ファイルやディレクトリの作成、移動、削除を実践。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task2">
+            <label for="task2">ファイルシステム: ファイルのパーミッション、リンク、ディスク使用量の確認 (<code>df, du</code>)、シンボリックリンクとハードリンクの違い
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 実際にリンクを作成し、パーミッションを変更してみる。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task3">
+            <label for="task3">ユーザー管理: ユーザーとグループの作成と管理 (<code>useradd, usermod, userdel, groupadd, groupdel</code>)
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: ユーザーやグループを作成し、ファイルのアクセス権を設定する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task4">
+            <label for="task4">シェルスクリプト: 基本的なスクリプトの書き方、変数、条件分岐 (<code>if, case</code>)、ループ (<code>for, while</code>)、標準入出力のリダイレクト (<code>>, >, |</code>)
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 簡単なスクリプトを書いて実行し、デバッグする。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>プログラミング基礎</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task5">
+            <label for="task5">Python: 変数、データ型、リスト、タプル、辞書、条件分岐 (<code>if, elif, else</code>)、ループ (<code>for, while</code>)、関数、クラス
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 簡単なプログラムを書いてみる（例：リストの操作、ファイルの読み書き）。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task6">
+            <label for="task6">JavaScript: 変数、データ型、配列、オブジェクト、条件分岐、ループ、関数、DOM操作
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 簡単なウェブページを作成し、JavaScriptで動的な操作を行う。</label>
+        </li>
+  </ul>
+    </div>
+    <div class="card">
+    <h3>Gitとバージョン管理</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task7">
+            <label for="task7">基本操作: <code>git init, git clone, git add, git commit, git push, git pull, git status, git log</code>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: GitHub上にリポジトリを作成し、ローカルリポジトリと連携させて基本操作を実践。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task8">
+            <label for="task8">ブランチ管理: <code>git branch, git checkout, git merge, git rebase</code>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: ブランチを作成し、機能の追加やバグ修正を行ってからマージする。</label>
+        </li>
+  </ul>
+</div>
+    </div>
+<div id="tab2" class="tab-content">
+    <h2>4-6ヶ月: ネットワークとデータベースの基礎</h2>
+    <div class="card">
+    <h3>ネットワークの基礎</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task9">
+            <label for="task9">TCP/IPモデル: 各レイヤーの役割とプロトコル（例：HTTP, TCP, IP）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: Wiresharkを使ってパケットキャプチャし、各プロトコルの動作を観察する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task10">
+            <label for="task10">HTTP/HTTPS: リクエストとレスポンスの仕組み、ステータスコード、ヘッダー、SSL/TLS
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: cURLを使ってHTTPリクエストを送信し、レスポンスを解析する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task11">
+            <label for="task11">DNS: ドメイン名からIPアドレスへの変換
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: <code>nslookup</code>, <code>dig</code>コマンドを使ってDNSクエリを実行。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task12">
+            <label for="task12">ファイアウォール: 基本的なファイアウォールの設定と管理
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: iptablesやufwを使って基本的なルールを設定する。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>データベースの基礎</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task13">
+            <label for="task13">SQL: 基本的なクエリ (<code>SELECT, INSERT, UPDATE, DELETE</code>)、テーブルの作成と管理、ジョイン、インデックス
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: MySQLやPostgreSQLをインストールし、基本的なデータベース操作を実践。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task14">
+            <label for="task14">NoSQL: 基本概念、データモデル、クエリの書き方(例：MongoDB、Redis）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: MongoDB、RedisなどのNoSQLデータベースをインストールし、CRUD操作を行うなど、基本操作を試す。</label>
+        </li>
+    </ul>
+</div>
+    </div>
+<div id="tab3" class="tab-content">
+    <h2>7-9ヶ月: 基本的な技術を深く理解する</h2>
+    <div class="card">
+    <h3>サーバーとインフラの基礎：サーバー管理</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task15">
+            <label for="task15">Webサーバー: ApacheまたはNginxの設定と管理、バーチャルホストの設定
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 簡単なウェブサイトを作成し、Webサーバーでホスティング。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task16">
+            <label for="task16">SSH: セキュアなリモートアクセス、鍵認証の設定
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: SSHサーバーを設定し、リモートアクセスを試みる。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task17">
+            <label for="task17">システムモニタリング: 基本的なツール（例：top, htop, vmstat, iostat）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: モニタリングツールを使ってサーバーのパフォーマンスを監視。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>サーバーとインフラの基礎：クラウドコンピューティングの基礎</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task18">
+            <label for="task18">AWS: EC2、S3、RDSの基本
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: AWS無料枠を使って基本的なサービスを利用してみる。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task19">
+            <label for="task19">インフラ自動化: IaC（例：Terraform、CloudFormation）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: Terraformを使って基本的なインフラをコードで定義してみる。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>アルゴリズムとデータ構造</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task20">
+            <label for="task20">データ構造: リスト、スタック、キュー、ツリー、グラフ、ハッシュテーブル
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 各データ構造をPythonやJavaScriptで実装し、基本操作を理解する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task21">
+            <label for="task21">アルゴリズム: ソートアルゴリズム（クイックソート、マージソートなど）、探索アルゴリズム（バイナリサーチ、BFS、DFS）
+
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 各アルゴリズムを実装し、入力データに対する動作を確認する。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>システム設計</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task22">
+            <label for="task22">設計原則: SOLID原則、デザインパターン（シングルトン、ファクトリー、ストラテジーなど）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 小規模なプロジェクトを設計し、デザインパターンを適用する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task23">
+            <label for="task23">スケーラビリティ: 水平方向と垂直方向のスケーリング、負荷分散
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: サーバーアーキテクチャを学び、簡単な負荷テストを実施する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task24">
+            <label for="task24">信頼性: フォールトトレランス、リカバリ戦略
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: レプリケーションやバックアップの設定を行う。</label>
+        </li>
+    </ul>
+</div>
+    </div>
+<div id="tab4" class="tab-content">
+    <h2>10-12ヶ月: 自分で何か大きな開発とデプロイの実践</h2>
+    <div class="card">
+    <h3>大規模なプロジェクト：継続的インテグレーション/デリバリー（CI/CD）</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task25">
+            <label for="task25">プロジェクト設計: 要件定義、設計、実装、テスト、デプロイのプロセスを学ぶ
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 実際にウェブアプリケーションやモバイルアプリを作成。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task26">
+            <label for="task26">CI/CDの概念とツールを使用して自動デプロイ環境を構築。（例：Jenkins、GitLab CI、GitHub Actions）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: GitHub Actionsを使って簡単なCI/CDパイプラインを構築し、自動化のメリットを理解する。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>コンテナ技術</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task27">
+            <label for="task27">Docker: イメージ、コンテナ、Dockerfileの基本
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: Dockerをインストールし、簡単なアプリケーションをコンテナ化。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task28">
+            <label for="task28">基本概念とリソース（例：Pod、Service、Deployment）
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: Minikubeを使ってローカル環境でKubernetesを実践。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>オープンソースへの貢献</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task29">
+            <label for="task29">GitHub: フォーク、プルリクエスト、コードレビューの方法を学ぶ
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 興味のあるオープンソースプロジェクトにコントリビュートし、実際にコードを提出。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task30">
+            <label for="task30">コラボレーション: Issueの管理、プロジェクト管理ツール（例：Jira, Trello）の利用
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: コラボレーションツールを使って他の開発者と共同作業を行う。</label>
+        </li>
+    </ul>
+</div>
+    </div>
+<div id="tab5" class="tab-content">
+    <h2>1年1-6ヶ月: 実務経験とツールの習得</h2>
+    <div class="card">
+    <h3>インターンシップやフリーランス</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task31">
+            <label for="task31">オープンソースプロジェクトに参加して実践経験を積む
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: GitHubで興味のあるプロジェクトをフォークし、貢献する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task32">
+            <label for="task32">実務経験: インターンシップに応募し、実際のプロジェクトに参加。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 仕事を通じて実践的なスキルを身につける。優秀なエンジニアの作業を観察して真似る(使っているエディターの種類、使っているアプリ、普段の情報収集の仕方、シェルの種類など全て)。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task33">
+            <label for="task33">フリーランス: クライアントとのやり取り、契約書の作成、プロジェクトの納期管理
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学学習方法: 小規模なフリーランスプロジェクトを受け、自分でプロジェクトを完遂する。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>DevOps文化の理解</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task34">
+            <label for="task34">DevOpsの概念: 継続的インテグレーション、デリバリー、自動化
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: DevOpsツール（例：Ansible、Puppet、Chef）を使って自動化を実践。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>ツールの習得</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task35">
+            <label for="task35">エディター: VSCodeやVimのプラグインやショートカットを学ぶ
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 日常的に使用し、効率的な作業環境を構築する。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task36">
+            <label for="task36">シェル: ZshやFishのカスタマイズ、シェルスクリプトの高度な利用
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: シェルスクリプトを使って日常のタスクを自動化。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task37">
+            <label for="task37">デバッグツール: デバッガの使い方、ログの解析
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 実際のプロジェクトでデバッグツールを使い、問題解決のスキルを向上させる。</label>
+        </li>
+    </ul>
+</div>
+    </div>
+<div id="tab6" class="tab-content">
+    <h2>1年7-9ヶ月: 専門知識の深化</h2>
+    <div class="card">
+
+    <h3>専門分野の選定</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task38">
+            <label for="task38">基本概念: 認証と認可、暗号化、セキュリティポリシー
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: OWASP Top Tenを学び、脆弱性の対策を実践。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task39">
+            <label for="task39">専門分野: AI/ML、サイバーセキュリティ、クラウドコンピューティングなどから選ぶ。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 専門書を読み、オンラインコースを受講し、専門知識を深める。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>リーダーシップスキル</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task40">
+            <label for="task40">チームリーダー: 小規模なチームを率い、プロジェクト管理を経験
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: プロジェクト管理ツールを使用し、チームのタスクを管理。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task41">
+            <label for="task41">コミュニケーション: チーム内での効果的なコミュニケーションスキルを学ぶ
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;学習方法: 定期的なミーティングを開催し、チームメンバーとのコミュニケーションを強化。</label>
+        </li>
+    </ul>
+</div>
+    </div>
+<div id="tab7" class="tab-content">
+    <h2>1年10-12ヶ月: 業界との接続とアウトプットによるキャリア形成</h2>
+    <div class="card">
+    <h3>カンファレンスやミートアップへの参加</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task42">
+            <label for="task42">業界イベント: 技術カンファレンス、ミートアップ、ウェビナーに参加
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;方法: 参加して最新技術や業界トレンドを学び、人脈を広げる。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task43">
+            <label for="task43">ネットワーキング: 業界の専門家や同僚と交流
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;方法: イベントでの名刺交換やSNS、LinkedInの相互フォローなどで専門家との繋がりを増やす。</label>
+        </li>
+    </ul>
+    </div>
+    <div class="card">
+    <h3>ブログやポートフォリオの作成</h3>
+    <ul>
+        <li>
+            <input type="checkbox" class="task" id="task44">
+            <label for="task44">ブログ: 技術的な知識など、学んだことについてまとめた記事を作成して、情報発信力を高める
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;方法: はてなブログやMediumなどで定期的に技術ブログを更新し、自分の知識をアウトプットする。</label>
+        </li>
+        <li>
+            <input type="checkbox" class="task" id="task45">
+            <label for="task45">ポートフォリオ: 自分のプロジェクトやスキルを紹介するウェブサイトを作成
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;方法: ウェブサイトを構築し、プロジェクトの成果やこれまでの実績を公開。</label>
+        </li>
+    </ul>
+</div>
+<!-- 外部JavaScriptファイルを読み込む -->
+<script src="script.js"></script>
+</body>
+</html>
