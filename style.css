@@ -1,38 +1,51 @@
 /* CSSスタイル */ 
-
-       :root {
-            --accent-color: #a100ff;
-            --bg-light: #f0f0f0;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --accent-color: #A100FF;
+            --bg-light: #F0F0F0;
             --bg-dark: #333;
-            --text-light: #ffffff;
+            --text-light: #FFFFFF;
             --text-dark: #000000;
-            --progress-bg: #ddd;
-            --progress-fill: #4caf50;
+            --progress-bg: #DDD;
+            --progress-fill: #4CAF50;
+            --font-family: 'Poppins', sans-serif;
             --acc-light: #ff80ff;
             --acc-dark: #8200ff;
         }
+
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-family);
             margin: 0;
             padding: 0;
             background-color: var(--bg-light);
             color: var(--text-dark);
             transition: background-color 0.3s, color 0.3s;
         }
+
+
+
         .header {
-            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--accent-color), var(--bg-dark));
             color: var(--text-light);
             padding: 20px;
             text-align: center;
-            font-size: 1.5em;
-            background: linear-gradient(135deg, var(--accent-color), var(--bg-dark));
+            font-size: 2em;
         }
+
+
+
+
+
+
         .tabs {
             display: flex;
             overflow-x: auto;
             background-color: var(--bg-dark);
             border-bottom: 2px solid #444;
         }
+
+
         .tab {
             padding: 14px 20px;
             cursor: pointer;
@@ -43,6 +56,7 @@
             transition: background-color 0.3s;
             flex: 1;
             text-align: center;
+            font-weight: 600;
         }
         .tab:hover, .tab.active {
             background-color: #555;
@@ -52,7 +66,7 @@
             padding: 20px;
             background-color: var(--text-light);
             color: var(--text-dark);
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #DDD;
         }
         .tab-content.active {
             display: block;
@@ -77,7 +91,7 @@
         }
         .progress-bar {
             width: 100%;
-            background-color: #ddd;
+            background-color: var(--progress-bg);
             height: 20px;
             border-radius: 10px;
             overflow: hidden;
@@ -87,21 +101,11 @@
         .progress-bar span {
             display: block;
             height: 100%;
-            background: linear-gradient(to right, var(--acc-dark), var(--acc-light));
+            background: linear-gradient(to right, #4B0082, #8A2BE2);
             transition: width 0.3s;
         }
         .progress-text {
             white-space: nowrap;
-        }
-        .dark-mode .tab-content {
-            background-color: #1e1e1e;
-            border-top: 1px solid #444;
-        }
-        .dark-mode .progress-bar {
-            background-color: #444;
-        }
-        .dark-mode .progress-bar span {
-            background: linear-gradient(to right, #6a0dad, #9370db);
         }
         .theme-toggle {
             position: absolute;
@@ -113,71 +117,75 @@
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
+            font-weight: 600;
         }
         .dark-mode {
             --bg-light: #333;
             --bg-dark: #000;
-            --text-light: #f0f0f0;
-            --text-dark: #ffffff;
+            --text-light: #F0F0F0;
+            --text-dark: #FFFFFF;
             --progress-bg: #555;
-            --progress-fill: #a100ff;
+            --progress-fill: #A100FF;
         }
-        /* Custom Illustrations and Animations */
-        .tab-content h2, .tab-content h3 {
-            animation: fadeIn 2s ease-in-out;
+        .dark-mode .tab-content {
+            background-color: #1E1E1E;
+            border-top: 1px solid #444;
         }
-        .task {
-            animation: slideIn 1s ease-in-out;
+        .dark-mode .progress-bar {
+            background-color: #444;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .dark-mode .progress-bar span {
+            background: linear-gradient(to right, #6A0DAD, #9370DB);
         }
-        @keyframes slideIn {
-            from { transform: translateX(-20px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        h3 {
-            font-size: 1.5em;
-            background: linear-gradient(135deg, #a100ff, #4b0082);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        /* Additional CSS for modern design elements */
         .card {
-            background: var(--bg-light);
+            background-color: var(--bg-light);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 20px 0;
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        .dark-mode .card {
+            background-color: #2C2C2C;
+            color: var(--text-light);
         }
         .accordion {
             background-color: var(--bg-dark);
             color: var(--text-light);
             cursor: pointer;
-            padding: 18px;
+            padding: 15px;
             width: 100%;
             border: none;
+            text-align: left;
             outline: none;
             transition: background-color 0.3s;
-            text-align: left;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 10px;
+            border-radius: 5px;
         }
         .accordion:hover, .accordion.active {
             background-color: #555;
         }
-        .accordion-content {
+        .panel {
             padding: 0 18px;
-            background-color: var(--bg-light);
+            background-color: var(--text-light);
             display: none;
             overflow: hidden;
-            transition: max-height 0.2s ease-out;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-dark);
+            border-radius: 5px;
         }
-        .accordion-content.show {
-            display: block;
+        .dark-mode .panel {
+            background-color: #1E1E1E;
+            color: var(--text-light);
+        }
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
         }
