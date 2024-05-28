@@ -1,6 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 :root {
     --accent-color: #A100FF;
     --bg-light: #F0F0F0;
@@ -204,7 +203,7 @@ input[type="checkbox"] {
 }
 
 /* Enhanced Text Styles */
-.panel{
+h3 {
     font-size: 1.5em;
     background: linear-gradient(135deg, #a100ff, #4b0082);
     -webkit-background-clip: text;
