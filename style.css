@@ -20,7 +20,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     transition: background-color 0.3s, color 0.3s;
-    padding-bottom: 60px; /* フッターの高さに合わせて調整 */
+    padding-bottom: 60px; /* Adjusted for footer height */
 }
 
 .header {
@@ -180,7 +180,7 @@ input[type="checkbox"] {
     color: var(--text-light);
     text-align: center;
     padding: 20px;
-    position: relative; /* fixedからrelativeに変更 */
+    position: relative; /* Changed from fixed to relative */
     width: 100%;
     bottom: 0;
     left: 0;
@@ -197,6 +197,7 @@ input[type="checkbox"] {
 }
 .tab-content h2 {
     animation: fadeIn 2s ease-in-out;
+    color: var(--accent-color); /* タイトルの文字色を紫に設定 */
 }
 .task {
     animation: slideIn 1s ease-in-out;
