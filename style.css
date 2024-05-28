@@ -1,176 +1,183 @@
-/* 共通のスタイル */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+/* CSSスタイル */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+:root {
+    --accent-color: #A100FF;
+    --bg-light: #F0F0F0;
+    --bg-dark: #333;
+    --text-light: #FFFFFF;
+    --text-dark: #000000;
+    --progress-bg: #DDD;
+    --progress-fill: #4CAF50;
+    --font-family: 'Poppins', sans-serif;
+    --acc-light: #ff80ff;
+    --acc-dark: #8200ff;
 }
 
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 60px; /* フッターの高さに合わせて調整 */
 }
 
 .header {
-    text-align: center;
+    background: linear-gradient(135deg, var(--accent-color), var(--bg-dark));
+    color: var(--text-light);
     padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    font-size: 2em;
 }
 
-/* タブのスタイル */
 .tabs {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    overflow-x: auto;
+    background-color: var(--bg-dark);
+    border-bottom: 2px solid #444;
 }
 
 .tab {
-    background-color: #ccc;
-    padding: 10px 20px;
-    border: none;
+    padding: 14px 20px;
     cursor: pointer;
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+    border: none;
+    outline: none;
     transition: background-color 0.3s;
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
 }
-
-.tab.active, .tab:hover {
-    background-color: #999;
+.tab:hover, .tab.active {
+    background-color: #555;
 }
-
 .tab-content {
     display: none;
+    padding: 20px;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    border-top: 1px solid #DDD;
 }
-
 .tab-content.active {
     display: block;
 }
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
-
-/* アコーディオンのスタイル */
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.progress-bar {
+    width: 100%;
+    background-color: var(--progress-bg);
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+}
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(to right, #4B0082, #8A2BE2);
+    transition: width 0.3s;
+}
+.progress-text {
+    white-space: nowrap;
+}
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.dark-mode {
+    --bg-light: #333;
+    --bg-dark: #000;
+    --text-light: #F0F0F0;
+    --text-dark: #FFFFFF;
+    --progress-bg: #555;
+    --progress-fill: #A100FF;
+}
+.dark-mode .tab-content {
+    background-color: #1E1E1E;
+    border-top: 1px solid #444;
+}
+.dark-mode .progress-bar {
+    background-color: #444;
+}
+.dark-mode .progress-bar span {
+    background: linear-gradient(to right, #6A0DAD, #9370DB);
+}
+.card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+.dark-mode .card {
+    background-color: #2C2C2C;
+    color: var(--text-light);
+}
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     cursor: pointer;
     padding: 15px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    transition: 0.4s;
-    font-size: 1.1em;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    margin-top: 10px;
+    border-radius: 5px;
 }
-
 .accordion:hover, .accordion.active {
-    background-color: #ccc;
+    background-color: #555;
 }
-
 .panel {
-    padding: 0 15px;
+    padding: 0 18px;
+    background-color: var(--text-light);
     display: none;
-    background-color: white;
     overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    color: var(--text-dark);
+    border-radius: 5px;
 }
-
-.card {
-    list-style: none;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+.dark-mode .panel {
+    background-color: #1E1E1E;
+    color: var(--text-light);
 }
-
-.card input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.card label {
-    font-size: 1em;
-    cursor: pointer;
-}
-
-/* プログレスバーのスタイル */
-.progress-container {
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    position: relative; /* fixedからrelativeに変更 */
     width: 100%;
-    background-color: #f3f3f3;
-    margin: 20px 0;
-}
-
-.progress-bar {
-    width: 0;
-    height: 30px;
-    background-color: #4caf50;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    transition: width 0.3s;
-}
-
-.progress-text {
-    text-align: center;
-    margin-top: 5px;
-}
-
-/* ダークモードのスタイル */
-body.dark-mode {
-    background-color: #333;
-    color: #f4f4f4;
-}
-
-body.dark-mode .header,
-body.dark-mode .footer {
-    background-color: #222;
-}
-
-body.dark-mode .tab {
-    background-color: #555;
-}
-
-body.dark-mode .tab.active, 
-body.dark-mode .tab:hover {
-    background-color: #777;
-}
-
-body.dark-mode .accordion {
-    background-color: #555;
-    color: #f4f4f4;
-}
-
-body.dark-mode .accordion.active,
-body.dark-mode .accordion:hover {
-    background-color: #777;
-}
-
-body.dark-mode .panel {
-    background-color: #444;
-}
-
-body.dark-mode .card {
-    background-color: #555;
-    border-color: #666;
-}
-
-body.dark-mode .progress-container {
-    background-color: #444;
-}
-
-body.dark-mode .progress-bar {
-    background-color: #2196F3;
+    bottom: 0;
+    left: 0;
 }
