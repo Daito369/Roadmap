@@ -196,7 +196,7 @@ input[type="checkbox"] {
     from { transform: translateX(-20px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
-.tab-content h2, .tab-content h3 {
+.tab-content h2 {
     animation: fadeIn 2s ease-in-out;
 }
 .task {
@@ -204,7 +204,7 @@ input[type="checkbox"] {
 }
 
 /* Enhanced Text Styles */
-.card{
+.panel{
     font-size: 1.5em;
     background: linear-gradient(135deg, #a100ff, #4b0082);
     -webkit-background-clip: text;
